@@ -8,7 +8,7 @@ import (
 	"github.com/hashicorp/terraform/helper/schema"
 	"github.com/hashicorp/terraform/helper/structure"
 
-	"github.com/Landoop/schema-registry"
+	"github.com/weichuliu/schema-registry"
 )
 
 // Terraform resource ID separator

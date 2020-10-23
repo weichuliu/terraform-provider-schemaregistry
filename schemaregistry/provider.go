@@ -14,6 +14,16 @@ func Provider() terraform.ResourceProvider {
 				Required:    true,
 				DefaultFunc: schema.EnvDefaultFunc("SCHEMAREGISTRY_URL", nil),
 			},
+			"username": {
+				Type:        schema.TypeString,
+				Required:    true,
+				DefaultFunc: schema.EnvDefaultFunc("SCHEMAREGISTRY_URL", nil),
+			},
+			"password": {
+				Type:        schema.TypeString,
+				Required:    true,
+				DefaultFunc: schema.EnvDefaultFunc("SCHEMAREGISTRY_URL", nil),
+			},
 		},
 		ResourcesMap: map[string]*schema.Resource{
 			"schemaregistry_subject_schema": resourceSchemaRegistrySubjectSchema(),
@@ -27,7 +37,9 @@ func Provider() terraform.ResourceProvider {
 
 func providerConfigure(data *schema.ResourceData) (interface{}, error) {
 	config := Config{
-		URL: data.Get("url").(string),
+		URL:      data.Get("url").(string),
+		Username: data.Get("username").(string),
+		Password: data.Get("password").(string),
 	}
 
 	log.Println("[INFO] Initializing Schema Registry client")

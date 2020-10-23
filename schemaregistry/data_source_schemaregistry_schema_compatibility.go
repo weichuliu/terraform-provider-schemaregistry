@@ -5,7 +5,7 @@ import (
 
 	"github.com/hashicorp/terraform/helper/schema"
 
-	"github.com/Landoop/schema-registry"
+	"github.com/weichuliu/schema-registry"
 )
 
 func dataSourceSchemaRegistrySchemaCompatibility() *schema.Resource {
