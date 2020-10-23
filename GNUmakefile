@@ -6,7 +6,7 @@ PKG_NAME=schemaregistry
 default: build
 
 build: fmtcheck
-	go install
+	go install -ldflags="-s -w"
 
 test: fmtcheck
 	go test -i $(TEST) || exit 1
